@@ -1,0 +1,237 @@
+
+/*------------------------------------Fonts------*/
+
+.text-capitalize, h3 {
+
+    font-family: 'Pacifico', cursive;
+   
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+} 
+
+
+/*------------------------------------Jumbotron Fonts------*/
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.jumbotron h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fc3110;
+}
+
+.jumbotron .lead {
+    color: black;
+    margin: 10px 0;
+}
+
+/*------------------------------------Containers------*/
+
+.container-wrapper,
+.container-wrapper--searchbycategory, .container-wrapper--profiledashboar,
+.container-wrapper--bigtrends, .container-wrapper--cookingtools,
+.container-wrapper--aboutus, .container-wrapper--connectwithus
+.container-wrapper--contactus {
+    background-color:white;
+    color: black;
+
+}
+
+/*-First Page-background------*/
+.callout-container {
+    height: 100vh;
+
+    background: url('../images/test.jpg') no-repeat bottom right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+/*-Except First Page-background------*/
+.background-container {
+   
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background: url('../images/test.jpg') no-repeat bottom right fixed;
+    opacity: 0.85;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    padding-top: 200px;
+    background: url('../images/test.jpg') no-repeat bottom right fixed;
+    opacity: 0.85;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    position: relative;
+}
+
+/*-First Page - picture style------*/
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.4);*/
+}
+
+/*-content container for all conteiners------*/
+.content-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    background-color: #ffffff;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    
+    font-weight: bold;
+    color: #000000;
+    
+}
+
+.section .page-header {
+    margin-bottom: 25px;
+}
+
+/*------------------------------------Navbar------*/
+
+.navalert-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .25);
+    border: 0;
+    position: fixed!important;
+    z-index: 1000;
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+/*-Navbar brand - the main bar in the top Cook Book------*/
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+.navbar .navbar-nav a {
+    font-weight: bold;
+
+}
+
+/*------------------------------------Block dividers------*/
+
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+    background-color: #444;
+}
+
+.block-divider--dash {
+    background-color: red;
+}
+
+.block-divider--white {
+    background-color: white;
+}
+
+.block-divider--short {
+    width: 35px;
+}
+
+
+
+/*------------------------------------Page Header------*/
+
+
+.page-header {
+    margin-bottom: 0;
+    border-bottom: 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    margin-top: 0;
+}
+
+
+/*------------------------------------Features------*/
+
+.feature {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+/*---------------------------------------------------------Media Queries------*/
+
+@media(min-width: 992px) {
+    .border-home-side-content {
+        min-height: 382px;
+    }
+
+
+    .header-image-contain {
+
+        visibility: visible;
+
+        background: url('../images/cooking.jpg');
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+        min-height: 360px;
+
+        transition: all 1s ease-in-out;
+
+        -moz-transition: all 1s ease-in-out;
+
+        -o-transition: all 1s ease-in-out;
+
+        -webkit-transition: all 1s ease-in-out;
+
+    }
+
+}
+
+
+

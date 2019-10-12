@@ -1,0 +1,167 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container-wrapper background-container d-flex justify-content-center">
+	<div class="card" style="width: 700px;">
+		<br>
+		<h1 class="card-img-top text-center">Upload Your Recipe</h1>
+		<div class="card-body">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Recipe Name</label>
+				<input
+					type="text"
+					class="form-control"
+					placeholder="Name"
+					name="name"
+					value="{{ recipe['name'] if recipe else '' }}"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Time (min)</label>
+				<input
+					type="text"
+					class="form-control"
+					placeholder="Time"
+					name="time"
+					value="{{ recipe['time'] if recipe else ''}}"
+				/>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Ingredients List</label>
+				<textarea
+					type="text"
+					class="form-control"
+					placeholder="Ingredients"
+					name="ingredients"
+				>{{ recipe['ingredients'] if recipe else '' }}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Preparation Steps</label>
+				<textarea
+					type="text"
+					class="form-control"
+					placeholder="Preparation"
+					name="preparation">{{ recipe['preparation'] if recipe else '' }}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Category</label>
+				<select class="ddlCategories"  multiple="multiple"></select>
+			</div>
+
+			{% if recipe %}
+				{% if recipe['image'] %}
+				<img src="{{ url_for('static', filename='images/'+(recipe['image'] if recipe['image'] else '')) }}" class="card-img-top"/>
+				{%endif%}
+			{%endif%}
+			
+			{{ dropzone.create(action='main.fileUpload') }}
+
+			{{ dropzone.config() }}
+			{{
+				dropzone.style(
+					'border: 2px dashed #0087F7; margin: 10%; min-height: 100px;'
+				)
+			}}
+			
+			<div class="alert alert-success collapse" role="alert">
+				Saved Successfully
+			</div>
+			<button
+				id="save"
+				class="btn btn-outline-success right mt-3"
+				type="submit"
+			>
+				Send
+			</button>
+		</div>
+	</div>
+</div>
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#save').bind('click', function() {
+			$.post(
+				'/recipe/save',
+				{
+					id: "{{ recipe['_id'] if recipe else '' }}",
+					name: $('input[name="name"]').val(),
+					time: $('input[name="time"]').val(),
+					ingredients: $('textarea[name="ingredients"]').val(),
+					preparation: $('textarea[name="preparation"]').val(),
+					categories: $('.ddlCategories').select2('data').map(m => m.text),
+				},
+				function(data) {
+					if (data.success) $('.alert-success').fadeIn();
+
+					$('#result').text(data.success);
+				}
+			);
+
+			return false;
+		});
+
+		$('.ddlCategories').select2({
+			width: '655px',
+			placeholder: 'Select multiple categories which your recipe belongs',
+			//templateResult: formatState,
+			ajax: {
+				url: '/categories/GetAll',
+				dataType: 'json',
+				processResults: function(data) {
+					return {
+						results: data,
+					};
+				},
+			},
+		});
+		
+		
+		 selectEditValue();
+	});
+
+	function formatState(state) {
+		if (!state.id) {
+			return state.text;
+		}
+
+		$.post('/categories/getAll', function(data) {
+			var $state = $('<span>' + data.name + '</span>');
+
+			return $state;
+		});
+	}
+	
+	function selectEditValue() {
+		var isNew = '{{ false if recipe else true }}';
+		
+		if (isNew == 'True')
+			return;
+			
+		var selected = "{%if recipe: %}{%for category in recipe['categories']%}{{category}},{%endfor%}{%endif%}".split(',');
+
+		selected.pop();
+		
+		selected.forEach(c => {
+			var data = {
+			    id: c,
+			    text: c
+			};
+			
+			var newOption = new Option(data.text, data.id, false, true);
+			$('.ddlCategories').append(newOption).trigger('change');
+			
+		})
+		
+	}
+</script>
+{% endblock %} {% block styles %}
+
+<style>
+	.ddlCategories {
+		width: 200px;
+	}
+
+	.dropzone {
+		border: 1px dashed gray;
+	}
+</style>
+{% endblock %} {% endblock %}

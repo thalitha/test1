@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block content %}
+<div class="background p-5">
+	
+	<div class="card-deck mt-5">
+	{% for recipe in recipes %}
+	
+		<div class="card">
+			<img src="{{ url_for('static', filename='images/'+recipe['image']) }}" class="card-img-top" alt="{{ recipe['name'] }}"/>
+			<div class="card-body">
+				<h5 class="card-title">{{recipe['name']}}</h5>
+				<p class="card-text">{{recipe['name']}}</p>
+			</div>
+			<div class="card-footer">
+		      	<a href="recipe/{{ recipe['_id'] }}" class="btn btn-primary">See more</a>
+		    </div>
+		</div>
+		
+	{% else %}
+	    <p> No product found </p>
+	{% endfor %}
+	</div>
+</div>
+{% block styles %}
+
+<style>
+	.info {
+		width: 300px;
+		text-align: center;
+		background: lightgray;
+		color: brown;
+	}
+</style>
+{% endblock %}{% endblock %}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!-- Quais linhas? ao inves the js.... colocar o python -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cooking Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+    <!-- main header -->
+    <div class="container-fluid text-center">
+        <div id="main-header">
+            <h1 class="header-name"><i>Your Online Cooking Book here </i></h1>
+        </div>
+    </div>
+
+    <!-- Enter city, search locations & results sections -->
+    <!-- Enter city -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="destination"></h2>
+                <div class="cityselection">     
+                    <input id="autocomplete" placeholder="Search for a recipe" type="text" /> 
+                    
+                    <div>
+                        <br/>
+                    </div>
+                </div>
+                
+                <form>
+                    <input type="checkbox" name="Meat" value="Meat" />Meat
+                    <input type="checkbox" name="Chicken" value="Chicken" /> Chicken
+                    <input type="checkbox" name="Pasta" value="Pasta" />Pasta
+                </form> 
+            </div>
+        </div>
+    </div>                    
+                
+    <!-- Callout -->
+    <div class="container-fluid callout-container">
+        <div class="opaque-overlay">&nbsp;</div>
+        <div class="row">
+            <div class="col-12">
+                <section class="callout jumbotron text-center">
+                    <br><br><br>
+                    <h1 class="jumbotron-header"><i>Your Online Cooking book!</i></h1>
+                    <hr class="block-divider block-divider--orange">
+                    <p class="lead">Join us today and start your online cooking book!
+                    <br> <i>Upload your recipes and see many other recipes</i>
+                    <br><br>
+                    <button class="btn btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Register</button>
+                    <hr class="block-divider block-divider--orange">
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- /.callout -->
+    
+    <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">Repeat Password</label>
+                            <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <br>
+                <div class="row">
+                    <h1>Your Dashboard</h1>
+                    <br>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <i class="fas fa-grin-hearts"></i>
+                            <h3>Your recipes</h3>
+                            <br>
+                            <p>
+                                You have 80 recipes!
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3><i class="fas fa-credit-card d-none d-sm-block"></i> Upload your recipe</h3>
+                            <p>Click here to upload</p>
+                            <br>
+                            <p><i class="fab fa-cc-visa"></i>
+                               <br> <i class="fab fa-cc-paypal"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <h3></i> Edit or Delete recipes</h3>
+                            <p>Click here to Edit</p></p>
+                            <p> Click here to Delete</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+        </div>
+        <div class="row">
+                <div class="col-sm-12 text-center"></div>
+        </div>
+
+       <div class="row">
+                <!-- map -->
+                <div class="col-sm-12 text-center">
+                        <div id="map"></div>        
+                </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+			
+                <!-- results section-->
+                <div id="resultsdropdown"></div>
+                <div id="listing">
+                    <table id="resultsTable">
+                        <tbody id="results"></tbody>
+                    </table>
+                </div>
+
+                <div style="display: none">
+                    <div id="info-content">
+                        <table>
+                            <tr id="iw-url-row" class="iw_table_row">
+                                <td id="iw-icon" class="iw_table_icon"></td>
+                                <td id="iw-url"></td>
+                            </tr>
+
+                            <tr id="iw-address-row" class="iw_table_row">
+                                <td class="iw_attribute_name">Address:</td>
+                                <td id="iw-address"></td>
+                            </tr>
+
+                            <tr id="iw-phone-row" class="iw_table_row">
+                                <td class="iw_attribute_name">Telephone:</td>
+                                <td id="iw-phone"></td>
+                            </tr>
+
+                            <tr id="iw-rating-row" class="iw_table_row">
+                                <td class="iw_attribute_name">Rating:</td>
+                                <td id="iw-rating"></td>
+                            </tr>
+
+                            <tr id="iw-website-row" class="iw_table_row">
+                                <td class="iw_attribute_name">Website:</td>
+                                <td id="iw-website"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	    
+    
+</body>
+
+</html>

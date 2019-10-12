@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cook Bood | The best food recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+    <div class="container-fluid navalert-container">
+        <!-- Yellow Bar -->
+        <div class="container-fluid alert-container">
+            <div class="row d-none d-sm-block">
+                <div class="col-12">
+                    <div class="site-wide-alert alert alert-warning">
+                       <i> <strong>Hello,</strong> join today, it is free! </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Yellow Bar -->
+        <!-- Menu -->
+        <!-- could maybe do? -->
+        It is possible do this nav bar fixed, even though scroll down?
+        <!-- could maybe do? -->
+        <nav class="navbar navbar-dark navbar-expand-sm">
+            
+            <a href="/" class="navbar-brand">Cook Book</a>
+                        
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" 
+                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    
+                    <!-- why "Home" doesn't work on below? -->
+                    </form>
+                    <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#searchbycategory">Search by category</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#bigtrends">Big Trends</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#cookingtools">Cooking Tools</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#aboutus">About Us</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#connectwithus">Connect with Us</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="#contactus">Contact Us</a></li>
+                    
+                    
+                    <li class="nav-item dropdown">
+                        
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dashboard
+                        </a>
+                        
+                        <!-- How make the links as Sign In / Register and Profile Dashboard work? -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#Sign In">Sign In</a>
+                            <a class="dropdown-item" href="#Register">Register</a>
+                            <a class="dropdown-item" href="#profiledashboard">Profile Dashboard</a>
+                        </div>
+                    </li>
+                    <!-- How make the links as Sign In / Sign Out work? -->
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="/login">Sign In / Sign Up</a></li>
+                </ul>
+            </div>
+            
+            <div class="d-none d-md-block">
+                <p class="navbar-text my-auto mr-2"><i>You a master chef!</i></p>
+            </div>
+            
+        </nav>
+    </div>
+    
+    <!-- 1st Page - Callout -->
+    <div class="container-fluid callout-container">
+        <div class="opaque-overlay">&nbsp;</div>
+        <div class="row">
+            <div class="col-12">
+                <section class="callout jumbotron text-center">
+                    <!-- it is not supposed use brs, It needs to use css... how? -->
+                    <br>
+                    <h1 class="jumbotron-header"><i>Your Online Cook Book</i></h1>
+                    <form>
+                            <!-- I WOULD LIKE TO MAKE THIS FIELD BIGGER -->
+                        <input name="search" placeholder="Search for a recipe"  size="55" type="text"/>
+                            <!-- /.I WOULD LIKE TO MAKE THIS FIELD BIGGER -->
+                    </form>
+                    <hr class="block-divider block-divider--dash">
+                    <h2 class="lead">
+                    <strong><i>Your best recepies in just one place</i></strong></h2>
+                    <hr class="block-divider block-divider--dash">
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- /.1st Page - Callout -->
+    
+    <!-- 2nd Page - Search by category -->
+    <div class="container-wrapper background-container container-wrapper--searchbycategory">
+        <div class="container features-container content-container">
+            <section class="features">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="searchbycategory">Search by Category:</h2>
+                        <p>a field here to show when a person flag an itens below: "Found 38 recipies"</p>
+                        <p>possible to flag more than one option, example: pasta and italian cousine"</p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Dish Types</h3>
+                            <form>
+                                <input type="checkbox" name="Chicken" value="Chicken" />Chicken
+                                <br><br>
+                                <input type="checkbox" name="Fish" value="Fish" /> Fish
+                                <br><br>
+                                <input type="checkbox" name="Meat" value="Meat" />Meat
+                                <br><br>
+                                <input type="checkbox" name="Pasta" value="Pasta" />Pasta
+                                <br><br>
+                                <input type="checkbox" name="Sandwichs" value="Sandwichs" />Sandwichs
+                                <br><br>
+                                <input type="checkbox" name="Desserts" value="Desserts" />Dessert
+                                <br><br>
+                                <input type="checkbox" name="Soup" value="Soup" />Soup
+                                <br><br>
+                                <input type="checkbox" name="Salad" value="Salad" />Salad
+                            </form> 
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Cuisine Types</h3>
+                             <form>
+                                <input type="checkbox" name="Italian" value="Italian" />Italian
+                                <br><br>
+                                <input type="checkbox" name="Greek" value="Greek" /> Greek
+                                <br><br>
+                                <input type="checkbox" name="Meat" value="Meat" />Meat
+                                <br><br>
+                                <input type="checkbox" name="Pasta" value="Pasta" />Pasta
+                                <br><br>
+                                <input type="checkbox" name="Sandwichs" value="Sandwichs" />Sandwichs
+                                <br><br>
+                                <input type="checkbox" name="Desserts" value="Desserts" />Dessert
+                                <br><br>
+                                <input type="checkbox" name="Soup" value="Soup" />Soup
+                                <br><br>
+                                <input type="checkbox" name="Salad" value="Salad" />Salad
+                            </form> 
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3></i> Diets</h3>
+                            <form>
+                                <input type="checkbox" name="Vegan" value="Vegan" />Vegan
+                                <br><br>
+                                <input type="checkbox" name="Light" value="Light" /> Light
+                                <br><br>
+                                <input type="checkbox" name="Diet" value="Diet" />Diet
+                                <br><br>
+                                <input type="checkbox" name="Gluten Free" value="Gluten Free" />Gluten Free
+                                <br><br>
+                                <input type="checkbox" name="Milk Allergic" value="Allergic Milk" />Allergic Milk
+                                <br><br>
+                                <input type="checkbox" name="Low Sugar" value="Low Sugar" />Low Sugar
+                                <br><br>
+                                <input type="checkbox" name="Soup" value="Soup" />Soup
+                                <br><br>
+                                <input type="checkbox" name="Salad" value="Salad" />Salad
+                            </form>                         </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--/.2nd Page - Search by category -->
+  
+     <!-- 3rd Page - Profile Dashboard -->  
+    <div class="container-wrapper container-wrapper--profiledashboard">
+        <div class="container features-container content-container">
+            <section class="features">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class= "text-capitalize" id="profiledashboard">Profile Dashboard </h2>
+                            <hr class="block-divider block-divider--short">
+                            <h2><i class="fas fa-user-circle"></i></h2>
+                            <p>You have "X" recepies uploaded</p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3></i>Upload Recipes</Rece></h3>
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Edit Recipes</h3>
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Delete Recipes</h3>
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="feature">
+                            <h3></i>Profile Chart </h3>
+                            <h2><i class="fas fa-poll-h"></i></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--/. 3rd Page - Search by category -->
+
+    <!-- 4th Page - Big Trends -->  
+    <div class="container-wrapper container-wrapper--bigtrends">
+        <div class="container content-container">
+            <section class="section">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="bigtrends">Big trends</h2>
+                        <hr class="block-divider block-divider--short">
+                        <h2><i class="fas fa-chart-line"></i></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="media">
+                            <br>
+                            <img src="images/Capture1.JPG">
+                            <br>
+                            <div class="media-body">
+                                <blockquote class="blockquote">
+                                    <p align="center">put a centralized "carrosel here showing 3 options of recepies</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+            </section>
+        </div>
+    </div>
+    <!-- 4th Page - Big Trends --> 
+    
+    <!-- 5th Page - Big Trends -->
+    <div class="container-wrapper container-wrapper--cookingtools">
+        <div class="container content-container">
+            <section class="section">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="cookingtools">Cooking Tools </h2>
+                        <hr class="block-divider block-divider--short">
+                        <h2><i class="fas fa-blender"></i></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="media">
+                            <img src="images/Capture1.JPG">
+                            <div class="media-body">
+                                <blockquote class="blockquote">
+                                    <p align="center">put a centralized "carrosel here showing 3 options of recepies</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+            </section>
+        </div>
+    </div>
+    <!-- /.5th Page - Big Trends -->
+    
+    <!-- 6th Page - Big Trends -->
+    <div class="container-wrapper container-wrapper--aboutus">
+        <div class="container  content-container">
+            <section class="section">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="aboutus">About Us </h2>
+                        <hr class="block-divider block-divider--short">
+                        <h2 <i class="fas fa-grin-hearts"></i></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="media">
+                            <img src="images/Capture1.JPG">
+                            <div class="media-body">
+                                <blockquote class="blockquote">
+                                    <p align="center">put a centralized "carrosel here showing 3 options of recepies</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+            </section>
+        </div>
+    </div>
+    <!-- /.6th Page - Big Trends -->
+
+     <!-- 7rd Page - Connect with us -->  
+     <div class="container-wrapper container-wrapper--connectwithus">
+        <div class="container features-container content-container">
+            <section class="features">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="connectwithus">Connect with Us </h2>
+                            <hr class="block-divider block-divider--short">
+                            <h2><i class="fas fa-share-alt-square"></i></h2>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3></i>Instagram</Rece></h3>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Facebook</h3>
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="feature">
+                            <h3>Twitter</h3>
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--/. 7rd Page - Connect with us -->
+    
+    <!-- 8rd Page - Contact us -->  
+    <div class="container-wrapper container-wrapper--contactus">
+        <div class="container content-container">
+            <section class="section">
+                <div class="row">
+                    <div class="col-12 page-header">
+                        <h2 class="text-capitalize" id="aboutus">Contact Us </h2>
+                        <hr class="block-divider block-divider--short">
+                        <h2 <i class="fas fa-envelope"></i></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="media">
+                            <img src="images/Capture1.JPG">
+                            <div class="media-body">
+                                <blockquote class="blockquote">
+                                    <p align="center">We would love to hear from you</p>
+                                    <h3 align="center">cookbook@cookbook.com</h3>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+            </section>
+        </div>
+    </div>
+    <!--/. 8rd Page - Connect us -->
+    
+
+    
+
+
+    
+    <!-- Join us form -->
+    <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign Up To A Cook Book!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">Repeat Password</label>
+                            <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.Join us form -->  
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
